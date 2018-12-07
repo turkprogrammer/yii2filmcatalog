@@ -1,4 +1,3 @@
-<?php use app\models\Film;?>
 <div class="menu-area floatright hidden-xs ">
 								<nav>
 									<ul>
@@ -6,8 +5,8 @@
 										</li>
 										<li><a href="/category/">Категории</a></li>
                                                                                 <li><a href="/site/about/">О сайте</a></li>
-                                                                                
-										<li><a href="/film/">Все фильмы <span class="label label-danger"><?= $model = Film::find()->count();?></span></a>
+                                                                                <li><a href="/actors/">Актеры <span class="label label-danger"><?= $model = app\models\Actors::find()->count();?></span></a></a></li>
+										<li><a href="/film/">Все фильмы <span class="label label-danger"><?= $model = app\models\Film::find()->count();?></span></a>
 											<ul class="submenu">
                                                                                             
 												<li><?= app\components\CatsWidget::widget() ?></li>
@@ -29,6 +28,7 @@
 										<li><a href="/">Главная</a>									
 										</li>
                                                                                 <li><a href="/site/about/">О сайте</a></li>
+                                                                                <li><a href="/actors/">Актеры</a></li>
 										<li><a href="/category/">Категории</a></li>
 										<li><a href="/film/">Все фильмы</a>
 											<ul class="submenu">
