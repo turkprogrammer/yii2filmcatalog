@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -16,10 +17,11 @@ AppAsset::register($this);
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
-        <meta charset="utf-8">
+        
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <?= Html::csrfMetaTags() ?>
 		<title><?= Html::encode($this->title) ?></title>
+        <meta charset="<?= Yii::$app->charset ?>">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,7 +57,7 @@ AppAsset::register($this);
 						<div class="col-md-3 col-sm-2">
                                                     
 							<div class="logo">
-								<a href="/"><img src="../../web/img/logo/1.png" alt=""/></a> 
+								 <a href="/"><img src="../../web/img/logo/1.png" alt=""/></a>  
 
 							</div>
 						</div>
@@ -78,6 +80,7 @@ AppAsset::register($this);
                                                                  <li><a href="index.html">home</a></li>
                                                                  <li><span>Blog gird right sidebar</span></li>
                                                              </ul> --> 
+                                                        <?php include(Yii::getAlias('@app/views/layouts/top_banner.php'));?>
 						</div>
 						</div>
 					</div>
@@ -101,26 +104,37 @@ AppAsset::register($this);
 					<div class="col-md-4">
 						<div class="sidebar-widget">
 							<h5 class="sidebar-title">Поиск по сайту</h5>
-							<form id="search" action="#">
-								<input type="text" placeholder="Search" />
-								<button>Search</button>
+							<form id="search" method="get" action="<?= Url::to(['/site/search/']) ?>">
+								<input type="text" name="search" placeholder="Что будем искать..." required="">
+								<button>Поиск</button>
 							</form>
 						</div>
 						<div class="sidebar-widget">
-							<h5 class="sidebar-title">Новые Фильмы</h5>
-							<ul class="sidebar-link">
+							<!--<h5 class="sidebar-title">Новые Фильмы</h5>
+							 <ul class="sidebar-link">
 								<li><a href="#">Howe to grow business plan Sticky Post</a></li>
 								<li><a href="#">Howe to grow business plan</a></li>
 								
-							</ul>
+							</ul> -->
+							
+							<div class="testimonial-wrapper">
+								<div class="test-img text-center">
+									<a href="https://github.com/turkprogrammer"><img src="https://avatars0.githubusercontent.com/u/430672?s=460&v=4" alt="" /></a>
+								</div>
+								<div class="test-content text-center">
+									<h3>TURkBilgesi</h3>
+									<span>Web Developer</span>
+									<p>Turan Eller var Olsun!</p>
+								</div>
+							</div>
+							
 						</div>
 						<div class="sidebar-widget">
-							<h5 class="sidebar-title">Популярные фильмы</h5>
-							<ul class="sidebar-link">
-								<li><a href="#">minimal</a></li>
-								<li><a href="#">Month of the year</a></li>
+							<h5 class="sidebar-title">Популярные фильмы</h5>							
 								
-							</ul>
+                                                                    
+                                                                        <?= app\components\PopWidget::widget() ?>
+                                                                   			
 						</div>
 						<div class="sidebar-widget">
 						<h5 class="sidebar-title">Комментарии</h5>
@@ -129,6 +143,8 @@ AppAsset::register($this);
 								<li><a href="#">nam nai on Howe to grow business plan</a></li>
 								
 							</ul>
+							
+							
 						</div>
 						<div class="sidebar-widget">
 							<h5 class="sidebar-title">tags</h5>
@@ -185,16 +201,16 @@ AppAsset::register($this);
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="copyright">
-								<p>Copyright © 2017 <a href="https://devitems.com/" target="_blank">DevItems</a> All Right Reserved.</p>
+                                                            <p>Copyright © 2018 <a href="https://github.com/turkprogrammer/yii2filmcatalog" target="_blank">TURkBilgesi</a> All Right Reserved.</p><span class="label label-info"><?= Yii::powered() ?></span>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="icon floatright">
-								<a href="https://twitter.com/devitemsllc"><i class="fa fa-twitter"></i></a>
-								<a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="fa fa-facebook"></i></a>
-								<a href="https://dribbble.com/devitemsllc"><i class="fa fa-dribbble"></i></a>
-								<a  href="https://www.instagram.com/devitems/"><i class="fa fa-instagram"></i></a>
-								<a href="https://www.youtube.com/channel/UC_AH6tcQrJa8txh_rNbL-AQ"><i class="fa fa-youtube"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-dribbble"></i></a>
+								<a  href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa-youtube"></i></a>
 							</div>
 						</div>
 					</div>

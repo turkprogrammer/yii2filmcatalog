@@ -11,7 +11,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Film;
 
-class SiteController extends Controller {
+class SiteController extends AppController {
 
     /**
      * {@inheritdoc}
@@ -122,6 +122,24 @@ class SiteController extends Controller {
      */
     public function actionAbout() {
         return $this->render('about');
+    }
+    
+    /*
+     * Поиск по сайту
+     */
+
+    public function actionSearch() {
+
+        $search = \Yii::$app->request->get('search'); //получаем переменную search из формы поиска
+        $search1 = str_replace(' ', '', $search); //удаляем пробелы
+        $query = Film::find()->where(['like', 'replace(title, " ", "")', $search1]);
+        $this->setMeta('Поиск', 'Blog', 'TurkProgrammer');
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => $query,
+            'pagination' => ['pagesize' => 3],
+        ]);
+
+        return $this->render('search', compact('dataProvider', 'search1'));
     }
 
 }

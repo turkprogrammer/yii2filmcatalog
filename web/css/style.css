@@ -360,12 +360,12 @@ font-family: 'Open Sans', sans-serif;}
   opacity: .8;
 }
 .bg-img {
-  background: rgba(0, 0, 0, 0) url("../web/img/bg/1.jpg") repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../img/bg/3.jpg") repeat scroll 0 0;
   background-position: center center;
   background-size: cover;
 }
 .bg-img-2{
-  background: rgba(0, 0, 0, 0) url("img/bg/2.jpg") repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../img/bg/2.jpg") repeat scroll 0 0;
   background-position: center center;
   background-size: cover;
 }
