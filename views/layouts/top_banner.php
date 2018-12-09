@@ -23,6 +23,8 @@ use app\models\Film;
     <div class="icerik-bilgi">
         <a href="<?= \yii\helpers\Url::to(['film/view', 'id' => $model['film_id']]) ?>"><h2><?php echo $model->title; ?></h2></a>
         <p class="banner"> <?php echo $model->description; ?></p>
+        <span class="small">В данном  YII2 приложении на текущий момент используется 6 таблиц (моделей) <code>actor</code>, <code>film</code>, <code>film_actor</code>, <code>film_category</code>, <code>category</code>. Используются связи таблиц <code>Категории</code> - <code>Фильмы</code>, <code>Актеры</code> - <code>Фильмы</code>. Реализован каталог Фильмов и Актеров, Поиск по фильмам. Планируется:админка (модуль), Пользователи, комментари к фильмам&nbsp;</p>
+</span>
         <div class="btn-group">
             <a class="btn btn-social btn-facebook" href="#" data-toggle="tooltip" title="Share Facebook"><i class="fa fa-facebook"></i></a>
             <a class="btn btn-social btn-twitter" href="#" data-toggle="tooltip" title="Share Twitter"><i class="fa fa-twitter"></i></a>
@@ -33,5 +35,8 @@ use app\models\Film;
                 <span class="btn btn-google">Далее <i class="fa fa-chevron-right"></i></span>
             </button>
         </a>
+
     </div>
+
+ 
 </div>
