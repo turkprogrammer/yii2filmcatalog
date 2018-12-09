@@ -3,7 +3,7 @@
 									<ul>
 										<li><a href="/">Главная</a>							
 										</li>
-										<li><a href="/category/">Категории</a></li>
+										<li><a href="/category/">Категории <i class="fa fa-list" aria-hidden="true"></i></a></li>
                                                                                 <li><a href="/site/about/">О сайте</a></li>
                                                                                 <li><a href="/actors/">Актеры <span class="label label-danger"><?= $model = app\models\Actors::find()->count();?></span></a></a></li>
 										<li><a href="/film/">Все фильмы <span class="label label-danger"><?= $model = app\models\Film::find()->count();?></span></a>
