@@ -54,6 +54,7 @@ $config = [
             'rules' => [
                 'category/<id:\d+>' => 'category/view',
                 'film/<id:\d+>' => 'film/view',
+                'actors/<id:\d+>' => 'actors/view',
                 '<action:(about|contact|login|signup)>' => 'site/<action>', // убираем контроллер Site из строки регуляркой
             ],
         ],

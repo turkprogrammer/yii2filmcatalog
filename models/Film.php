@@ -28,8 +28,7 @@ class Film extends \yii\db\ActiveRecord
     {
         return 'film';
     }
-    
- 
+  
     /**
      * {@inheritdoc}
      */
